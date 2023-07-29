@@ -7,6 +7,7 @@ formEl.addEventListener('submit', onSubmit);
 
 const LS_KEY = 'feedback-form-state';
 const { email, message } = formEl.elements;
+const formData = {};
 
 const savedData = checkStorage();
 if (savedData) {
@@ -15,10 +16,8 @@ if (savedData) {
 }
 
 function onInput() {
-  const formData = {
-    email: email.value,
-    message: message.value,
-  };
+  formData.email = email.value,
+ formData.message = message.value,
 
   localStorage.setItem(LS_KEY, JSON.stringify(formData) || {});
 }
