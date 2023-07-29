@@ -15,7 +15,7 @@ if (savedData) {
 }
 
 function onInput() {
-  formData = {
+  const formData = {
     email: email.value,
     message: message.value,
   };
