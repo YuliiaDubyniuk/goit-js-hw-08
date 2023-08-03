@@ -12,7 +12,17 @@ function saveCurrentPlayTime(data) {
     localStorage.setItem(LS_KEY, data.seconds);
 }
 
-player.setCurrentTime(JSON.parse(localStorage.getItem(LS_KEY))||0);
+player.setCurrentTime(getWatchTime());
+
+function getWatchTime() {
+    try {
+        const savedTime = localStorage.getItem(LS_KEY);
+        return savedTime ? JSON.parse(savedTime) : 0;
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
   
 
     

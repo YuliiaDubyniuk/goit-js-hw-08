@@ -27,7 +27,8 @@ function onSubmit(evt) {
   if (email.value.trim() === '' || message.value.trim() === '') {
     return alert('Please, fill out all the fields!');
   }
-  console.log(formData);
+    console.log(formData);
+    formData = {};
   localStorage.removeItem(LS_KEY);
   evt.currentTarget.reset();
 }
